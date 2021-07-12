@@ -12,3 +12,18 @@ resource "helm_release" "argocd" {
     })
   ]
 }
+
+resource "kubernetes_secret" "argocd-github" {
+  metadata {
+    name = "argocd-github"
+    namespace = "argocd"
+  }
+  type = "Opaque"
+  data = {
+    sshPrivateKey = data.aws_ssm_parameter.argocd-github.value
+  }
+}
+
+data "aws_ssm_parameter" "argocd-github" {
+  name = "/k8s/secrets/github/ssh-private-key"
+}

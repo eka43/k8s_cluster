@@ -3,3 +3,4 @@ kubeconfig*
 dev.log
 .*.swp
 *tfplan
+terraform.tfstate*
