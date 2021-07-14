@@ -24,15 +24,18 @@ provider "aws" {
   profile = "ssm_aws"
 }
 provider "kubernetes" {
-  config_path = "/home/kkangie/.kube/config"
+  #config_path = "/home/kkangie/.kube/config"
+  config_path = "/home/ekang/.kube/config"
 }
 provider "kubernetes-alpha" {
-  config_path = "/home/kkangie/.kube/config"
+  #config_path = "/home/kkangie/.kube/config"
+  config_path = "/home/ekang/.kube/config"
   #server_side_planning = true
   #server_side_planning = false
 }
 provider "helm" {
   kubernetes {
-    config_path = "/home/kkangie/.kube/config"
+    #config_path = "/home/kkangie/.kube/config"
+    config_path = "/home/ekang/.kube/config"
   }
 }
