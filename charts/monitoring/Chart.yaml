@@ -8,3 +8,10 @@ dependencies:
   - name: prometheus
     version: 14.4.0
     repository: https://prometheus-community.github.io/helm-charts
+  - name: falco
+    version: 1.15.3
+    repository: https://falcosecurity.github.io/charts
+    falcosidekick:
+      enabled: true
+    webui:
+      enabled: true

@@ -27,7 +27,7 @@ resource "kubernetes_secret" "argocd-github" {
 data "aws_ssm_parameter" "argocd-github" {
   name = "/k8s/secrets/github/ssh-private-key-2"
 }
-
+/*
 resource "helm_release" "falco" {
   name = "falco"
   namespace = "monitoring"
@@ -46,3 +46,4 @@ resource "helm_release" "falco" {
     value = "true"
   }
 }
+*/
