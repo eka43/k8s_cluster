@@ -80,3 +80,9 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+jsonOutput: true
+jsonIncludeOutputProperty: true
+httpOutput:
+  enabled: true
+  url: "http://falcosidekick:2801/"
