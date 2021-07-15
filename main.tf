@@ -1,5 +1,5 @@
 resource "helm_release" "argocd" {
-  name  = "argocd"
+  name = "argocd"
   namespace = "argocd"
   create_namespace = true
   repository = "https://argoproj.github.io/argo-helm"
@@ -26,4 +26,23 @@ resource "kubernetes_secret" "argocd-github" {
 
 data "aws_ssm_parameter" "argocd-github" {
   name = "/k8s/secrets/github/ssh-private-key-2"
+}
+
+resource "helm_release" "falco" {
+  name = "falco"
+  namespace = "monitoring"
+  create_namespace = true
+  repository = "https://falcosecurity.github.io/charts"
+  chart = "falco"
+  version = "1.15.3"
+  
+  set {
+    name = "falcosidekick.enabled"
+    value = "true"
+  }
+
+  set {
+    name = "falcosidekick.webui.enabled"
+    value = "true"
+  }
 }
