@@ -80,3 +80,17 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+falco:
+  falcosidekick:
+    enabled: true
+    webui:
+      enabled: true
+  fakeEventGenerator:
+    enabled: true
+  jsonOutput: true
+  jsonIncludeOutputProperty: true
+  httpOutput:
+    enabled: true
+    url: "http://falcosidekick:2801/"
+
