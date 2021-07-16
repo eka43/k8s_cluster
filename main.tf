@@ -14,6 +14,7 @@ resource "helm_release" "argocd" {
 }
 
 resource "kubernetes_secret" "argocd-github" {
+  depends_on = [helm_release.argocd]
   metadata {
     name = "argocd-github"
     namespace = "argocd"
