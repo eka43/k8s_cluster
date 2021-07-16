@@ -99,3 +99,10 @@ falco:
     enabled: true
     url: "http://falcosidekick:2801/"
 
+falcosidekick:
+  config:
+    alertmanager:
+      hostport: "http://localhost:9093"
+  webui:
+    enabled: true
+
