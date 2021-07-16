@@ -86,8 +86,11 @@ falco:
     enabled: true
     webui:
       enabled: true
-    alertmanager:
-      hostport: 9093
+    config:
+      alertmanager:
+        hostport: 9093
+      webui:
+        url: "http://localhost:2802/ui"
   fakeEventGenerator:
     enabled: false
   jsonOutput: true
