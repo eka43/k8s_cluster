@@ -86,8 +86,10 @@ falco:
     enabled: true
     webui:
       enabled: true
+    alertmanager:
+      hostport: 9093
   fakeEventGenerator:
-    enabled: true
+    enabled: false
   jsonOutput: true
   jsonIncludeOutputProperty: true
   httpOutput:
