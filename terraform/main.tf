@@ -7,14 +7,13 @@ resource "helm_release" "argocd" {
   version = "3.8.1"
   #force_update = true
   values = [
-    templatefile("values/argocd.yaml", {
+    templatefile("../values/argocd.yaml", {
       test = "testings"
     })
   ]
 }
 
 resource "kubernetes_secret" "argocd-github" {
-  depends_on = [helm_release.argocd]
   metadata {
     name = "argocd-github"
     namespace = "argocd"
