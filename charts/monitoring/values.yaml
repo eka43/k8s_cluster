@@ -106,3 +106,9 @@ falcosidekick:
   webui:
     enabled: true
 
+prometheus:
+  alerting:
+    alertmanagers:
+    - static_configs:
+      - targets:
+        - localhost:9093

@@ -27,3 +27,9 @@ resource "kubernetes_secret" "argocd-github" {
 data "aws_ssm_parameter" "argocd-github" {
   name = "/k8s/secrets/github/ssh-private-key-2"
 }
+
+resource "kubernetes_namespace" "monitoring" {
+  metadata {
+    name = "monitoring"
+  }
+}
