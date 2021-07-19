@@ -3,8 +3,8 @@ kind: Application
 metadata:
   name: monitoring
   namespace: argocd
-  annotations:
-    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: testing-argocd
+  #  annotations:
+  #  notifications.argoproj.io/subscribe.on-sync-succeeded.slack: testing-argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
