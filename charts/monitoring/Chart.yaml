@@ -9,7 +9,7 @@ dependencies:
     version: 14.4.0
     repository: https://prometheus-community.github.io/helm-charts
   - name: falco
-    version: 1.15.3
+    version: 1.15.4
     repository: https://falcosecurity.github.io/charts
     #  - name: argocd-notifications
     #    version: 1.1.1
