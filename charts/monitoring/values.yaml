@@ -82,10 +82,10 @@ tolerations: []
 affinity: {}
 
 falco:
-  falcosidekick:
-    enabled: true
-    webui:
-      enabled: true
+#  falcosidekick:
+#    enabled: true
+#    webui:
+#      enabled: true
       # config:
       # alertmanager:
       #  hostport: 9093
