@@ -82,10 +82,10 @@ tolerations: []
 affinity: {}
 
 falco:
-#  falcosidekick:
-#    enabled: true
-#    webui:
-#      enabled: true
+  falcosidekick:
+    enabled: true
+    webui:
+      enabled: true
       # config:
       # alertmanager:
       #  hostport: 9093
@@ -103,8 +103,8 @@ falcosidekick:
   config:
     alertmanager:
       hostport: "http://localhost:9093"
-  webui:
-    enabled: true
+      #  webui:
+      #    enabled: true
 
 prometheus:
   alerting:
