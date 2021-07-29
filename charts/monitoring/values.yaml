@@ -103,7 +103,7 @@ falcosidekick:
   ingress:
     enabled: true
   #  annotations:
-      
+    path: /      
   config:
     alertmanager:
       hostport: "http://localhost:9093"
