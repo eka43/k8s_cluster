@@ -29,7 +29,7 @@ spec:
     - host: {{ .host | quote }}
       http:
         paths:
-        {{- range .paths }}
+#        {{- range .paths }}
           - path: {{ . }}
             backend:
               serviceName: {{ $fullName }}
