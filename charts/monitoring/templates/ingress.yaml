@@ -32,5 +32,4 @@ spec:
             backend:
               serviceName: {{ $fullName }}
               servicePort: 2801
-  {{- end }}
 {{- end }}
