@@ -100,22 +100,6 @@ falco:
     url: "http://falcosidekick:2801/"
 
 falcosidekick:
-        #  ingress:
-        #    enabled: true
-        #    annotations:
-        #      ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
-        #      kubernetes.io/ingress.class: nginx
-        #    hosts:
-        #      - host: sidekick.test
-        #        paths: [/]
-        #    tls: []
-        #  config:
-        #    alertmanager:
-        #      hostport: "http://localhost:9093"
-      #  webui:
-      #    enabled: true
-
-falcosidekick-ui:
   ingress:
     enabled: true
     annotations:
@@ -123,9 +107,11 @@ falcosidekick-ui:
       kubernetes.io/ingress.class: nginx
     hosts:
       - host: sidekick.local
-        paths: "/ui"
+        paths: [/]
     tls: []
-  
+  webui:
+    url: "sidekick.local/ui"
+
 prometheus:
   alerting:
     alertmanagers:
