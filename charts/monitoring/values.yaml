@@ -108,7 +108,6 @@ falcosidekick:
     hosts:
       - host: sidekick.local
         paths: [/]
-        servicePort: 2801
     tls: []
   webui:
     url: "sidekick.local/ui"
