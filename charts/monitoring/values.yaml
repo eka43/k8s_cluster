@@ -106,7 +106,7 @@ falcosidekick:
       ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
       kubernetes.io/ingress.class: nginx
     hosts:
-      - host: sidekick.local
+      - host: sidekick.test
         paths: [/]
     tls: []
   config:
