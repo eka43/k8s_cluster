@@ -115,6 +115,17 @@ falcosidekick:
       #  webui:
       #    enabled: true
 
+falcosidekick-ui:
+  ingress:
+    enabled: true
+    annotations:
+      ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
+      kubernetes.io/ingress.class: nginx
+    hosts:
+      - host: sidekick.local
+        paths: "/ui"
+    tls: []
+  
 prometheus:
   alerting:
     alertmanagers:
