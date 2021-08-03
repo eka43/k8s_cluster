@@ -101,12 +101,14 @@ falco:
 
 falcosidekick:
   ingress:
-    enabled: false
+    enabled: true
     annotations:
       ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
       kubernetes.io/ingress.class: nginx
     hosts:
-      - sidekick.local
+      - host: sidekick.local
+        paths: []
+    tls: []
   config:
     alertmanager:
       hostport: "http://localhost:9093"
