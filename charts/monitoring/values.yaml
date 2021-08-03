@@ -105,6 +105,8 @@ falcosidekick:
     annotations:
       kubernetes.io/ingress.class: nginx
       #  kubernetes.io/tls-acme: "true"
+    hosts:
+      - paths: [/]
 
   webui:
     enabled: true
