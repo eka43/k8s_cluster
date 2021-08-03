@@ -97,20 +97,22 @@ falco:
   jsonIncludeOutputProperty: true
   httpOutput:
     enabled: true
-    url: "sidekick.local"
+    url: "http://falcosidekick.local"
 
 falcosidekick:
   ingress:
     enabled: true
     annotations:
-      ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
       kubernetes.io/ingress.class: nginx
-    hosts:
-      - host: sidekick.local
-        paths: [/]
-    tls: []
+      #  kubernetes.io/tls-acme: "true"
+
   webui:
-    url: "sidekick.local/ui"
+    enabled: true
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+      # kubernetes.io/tls-acme: "true"
 
 prometheus:
   alerting:
