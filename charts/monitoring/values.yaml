@@ -107,11 +107,8 @@ falcosidekick:
       kubernetes.io/ingress.class: nginx
     hosts:
       - host: sidekick.local
-        http:
-          paths:
-            - backend:
-                serviceName: monitoring-falcosidekick
-                servicePort: 8081
+        paths: [/]
+        servicePort: 2801
     tls: []
   webui:
     url: "sidekick.local/ui"
