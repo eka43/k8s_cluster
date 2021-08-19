@@ -116,6 +116,26 @@ falcosidekick:
         kubernetes.io/ingress.class: public
       # kubernetes.io/tls-acme: "true"
 
+kubewatch:
+  slack:
+    enabled: true
+    channel: "testing-kubewatch"
+    token: "xoxb-2286818715605-2407140887444-BAI3rs5C1QXlSaIA7U9XFGi4"
+
+  namespaceToWatch: ""
+  resourcesToWatch:
+    deployment: true
+    replicationcontroller: true
+    replicaset: true
+    daemonset: true
+    services: true
+    pod: true
+    job: true
+    persistentvolume: true
+
+  rbac:
+    create: true
+    
 prometheus:
   alerting:
     alertmanagers:
