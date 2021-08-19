@@ -116,9 +116,6 @@ falcosidekick:
         kubernetes.io/ingress.class: public
       # kubernetes.io/tls-acme: "true"
 
-kubewatch:
-  
-
 prometheus:
   alerting:
     alertmanagers:
