@@ -98,7 +98,11 @@ falco:
   httpOutput:
     enabled: true
     url: "http://falcosidekick.local"
-
+  falcosidekick:
+  # enable falcosidekick deployment
+    enabled: true
+    fullfqdn: true
+  # for configuration values, see https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.yaml
 falcosidekick:
   ingress:
     enabled: true
