@@ -130,8 +130,14 @@ kubewatch:
     services: true
     pod: true
     job: true
+    node: true
+    clusterrole: true
+    serviceaccount: true
     persistentvolume: true
-
+    namespace: true
+    secret: true
+    configmap: true
+    ingress: true
   rbac:
     create: true
     
