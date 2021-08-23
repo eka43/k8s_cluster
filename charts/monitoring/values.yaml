@@ -136,7 +136,7 @@ kubewatch:
     persistentvolume: true
     namespace: true
     secret: true
-    configmap: true
+    configmap: false
     ingress: true
   rbac:
     create: true
