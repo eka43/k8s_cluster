@@ -115,16 +115,17 @@ falcosidekick:
         kubernetes.io/ingress.class: public
       # kubernetes.io/tls-acme: "true"
 
-  slack:
-    webhookurl: "https://hooks.slack.com/services/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" # Slack WebhookURL (ex: https://hooks.slack.com/services/XXXX/YYYY/ZZZZ), if not empty, Slack output is enabled
-    #footer: "" # Slack footer
-    #icon: "" # Slack icon (avatar)
-    #username: "" # Slack username (default: Falcosidekick)
-    outputformat: "all" # all (default), text, fields
-    minimumpriority: "debug" # minimum priority of event for using this output, order is emergency|alert|critical|error|warning|notice|informational|debug or "" (default)
-    messageformat: 'Alert : rule *{{ .Rule }}* triggered by user *{{ index
-    .OutputFields "user.name" }}*' # a Go template to format Slack Text above Attachment, displayed in addition to the output from `SLACK_OUTPUTFORMAT`, see [Slack Message Formatting](#slack-message-formatting) in the README for details. If empty, no Text is displayed before Attachment.
-    
+  config:
+    slack:
+      webhookurl: "https://hooks.slack.com/services/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" # Slack WebhookURL (ex: https://hooks.slack.com/services/XXXX/YYYY/ZZZZ), if not empty, Slack output is enabled
+      #footer: "" # Slack footer
+      #icon: "" # Slack icon (avatar)
+      #username: "" # Slack username (default: Falcosidekick)
+      outputformat: "all" # all (default), text, fields
+      minimumpriority: "debug" # minimum priority of event for using this output, order is emergency|alert|critical|error|warning|notice|informational|debug or "" (default)
+      messageformat: 'Alert : rule *{{ .Rule }}* triggered by user *{{ index
+      .OutputFields "user.name" }}*' # a Go template to format Slack Text above Attachment, displayed in addition to the output from `SLACK_OUTPUTFORMAT`, see [Slack Message Formatting](#slack-message-formatting) in the README for details. If empty, no Text is displayed before Attachment.
+      
 
 kubewatch:
   slack:
