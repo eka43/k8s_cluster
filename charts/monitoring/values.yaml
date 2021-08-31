@@ -95,6 +95,7 @@ falco:
     enabled: false
   jsonOutput: true
   jsonIncludeOutputProperty: true
+  logLevel: debug
   httpOutput:
     enabled: true
     url: "http://falcosidekick.local"
