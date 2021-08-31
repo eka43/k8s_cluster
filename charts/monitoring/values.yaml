@@ -93,12 +93,18 @@ falco:
       #  url: "http://localhost:2802/ui"
   fakeEventGenerator:
     enabled: false
-  jsonOutput: true
-  jsonIncludeOutputProperty: true
-  logLevel: debug
-  httpOutput:
-    enabled: true
-    url: "http://falcosidekick.local"
+  falco: 
+    jsonOutput: true
+    jsonIncludeOutputProperty: true
+    logLevel: debug
+    httpOutput:
+      enabled: true
+      url: "http://falcosidekick.local"
+    programOutput:
+      enabled: true
+      keepAlive: true
+      program: "jq '{text: .output}' | curl -d @- -X POST https://hooks.slack.com/services/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"
+
 falcosidekick:
   ingress:
     enabled: true
