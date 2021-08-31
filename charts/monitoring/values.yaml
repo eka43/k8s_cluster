@@ -103,8 +103,16 @@ falco:
     programOutput:
       enabled: true
       keepAlive: true
-      program: "jq '{text: .output}' | curl -d @- -X POST https://hooks.slack.com/services/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"
-
+      program: |
+        jq 'if .priority == "Emergency" or .priority == "Critical" or .priority == "Error" then
+          { attachments: [{ text: .output, color: "danger" }]}
+        elif .priority == "Warning" or .priority == "Notice" then
+          { attachments: [{ text: .output, color: "warning" }]}
+        elif .priority == "Informational" then
+          { attachments: [{ text: .output, color: "good" }]}
+        else
+          { attachments: [{ text: .output }]}
+        end' | curl -d @- -X POST https://hooks.slack.com/services/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
 falcosidekick:
   ingress:
     enabled: true
