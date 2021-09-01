@@ -103,7 +103,8 @@ falco:
     programOutput:
       enabled: true
       keepAlive: false
-      program: "jq '{text: .output}' | curl -d @- -X POST https://hooks.slack.com/services/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"
+      #      program: "jq '{text: .output}' | curl -d @- -X POST https://hooks.slack.com/services/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"
+      program: "jq '{text: .output}' | curl -d @- -X POST https://hooks.slack.com/services/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"
 falcosidekick:
   ingress:
     enabled: true
