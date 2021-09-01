@@ -102,8 +102,8 @@ falco:
       url: "http://falcosidekick.local"
     programOutput:
       enabled: true
-      keepAlive: true
-      program: "\"jq '{text: .output}' | curl -d @- -X POST https://hooks.slack.com/services/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\""
+      keepAlive: false
+      program: "jq '{text: .output}' | curl -d @- -X POST https://hooks.slack.com/services/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"
 falcosidekick:
   ingress:
     enabled: true
