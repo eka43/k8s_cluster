@@ -20,3 +20,6 @@ dependencies:
   - name: kubewatch
     version: 3.2.13
     repository: https://charts.bitnami.com/bitnami 
+  - name: velero
+    version: 2.23.12
+    repository: https://vmware-tanzu.github.io/helm-charts
