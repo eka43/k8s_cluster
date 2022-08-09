@@ -19,7 +19,7 @@ server:
   config:
     url: https://argo.local
     repositories: |
-      - url: git@github.com:eka43/k8s_cluster.git
+            - url: ssh://git@github.com:eka43/k8s_cluster.git
         sshPrivateKeySecret:
           name: argocd-github
           key: sshPrivateKey
