@@ -2,8 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: cluster-addons
+  namespace: argocd
 spec:
-  goTemplate: true
   generators:
   - git:
       repoURL: https://github.com/eka43/k8s_cluster.git 
@@ -12,13 +12,13 @@ spec:
       - path: cluster-addons/*
   template:
     metadata:
-      name: '{{.path.basename}}'
+      name: '{{.path.segments[0]}}'
     spec:
       project: default
       source:
         repoURL: https://github.com/eka43/k8s_cluster.git 
         targetRevision: HEAD
-        path: '{{.path.path}}'
+        path: '{{.path}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{.path.basename}}'
